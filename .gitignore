@@ -2,8 +2,9 @@
 R/config.R
 R/email_sender.R
 
-# Folders
-vintages
+# Vintages
+vintages/*
+!vintages/.gitkeep
 
 # Authentication
 gmail_creds
