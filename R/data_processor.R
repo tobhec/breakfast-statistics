@@ -77,10 +77,8 @@ sources_list  <- sources_list[unique_idx]
 con_geos_list <- con_geos_list[unique_idx]
 dropdowns_list <- dropdowns_list[unique_idx]
 
-
+# Remove status and conf columns if present
 for(indic in names(tables_list)) {
-  
-  # Remove columns if present
   drop_cols <- intersect(c("obs_status", "obs_conf"), names(tables_list[[indic]]))
   if (length(drop_cols)) {
     tables_list[[indic]][, (drop_cols) := NULL]

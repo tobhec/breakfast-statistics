@@ -82,7 +82,6 @@ for (per in names(pref_list)) {
       return(NA)
     }
   )
-
   
   # Try to generate the mail for the current subscriber
   tryCatch(
@@ -107,7 +106,5 @@ for (per in names(pref_list)) {
       return(NA)
     }
   )
-      
-      
 }
 

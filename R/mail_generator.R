@@ -7,7 +7,6 @@ body_text <- paste0(
   "<span style='background-color:#FFD580;'>Orange numbers represent data revisions.</span>"
 )
 
-
 for(theme in themes) {
   # Extract the indicators for the given theme
   indics_by_theme <- raw_data_list[[theme]]
@@ -49,59 +48,50 @@ for(theme in themes) {
         new_cols <- new_cols[new_cols > max(names(vintage_table)[-1])]
         
         # Check each relevant cell if there has been new data or a revision
-        # 1. Check for new releases (new columns)
+        # 1. Check for new releases (in new columns)
         for (row_label in row_labels) {
           for (c_label in col_names[-1]) {   # skip ID column
             
             if (c_label %in% new_cols && 
                 !is.na(i_temp[[indic]][row_label, c_label])) {
-              # Mark new data green
-              indic_colored[row_label, c_label] <- sprintf(
-                "<span style='background-color:lightgreen;'>%s</span>",
-                indic_colored[row_label, c_label]
-              )
-              }
+              
+                  # Mark new data green
+                  indic_colored[row_label, c_label] <- sprintf(
+                    "<span style='background-color:lightgreen;'>%s</span>",
+                    indic_colored[row_label, c_label]
+                  )
             }
+          }
         }
         
-        # 2. Check for revisions and new releases (of pre-existing columns)
+        # 2. Check for revisions and new releases (in pre-existing columns)
           for (r_label in row_labels_rev) {
             for (c_label in names(revision_table)[-1]) {
                 
+              # If revision happened
               if (isTRUE(as.logical(revision_table[revision_table$Country == r_label, c_label]))) {
-                # Mark revision yellow
+                
+                # Mark number yellow
                 indic_colored[indic_colored$Country == r_label, c_label] <- sprintf(
                   "<span style='background-color:#FFD580;'>%s</span>",
                   indic_colored[indic_colored$Country == r_label, c_label]
                 )
               
-                # Add sentence
+                # Add sentence explaining the revision
                 old_value <- vintage_table[vintage_table$Country == r_label, c_label]
-                diff_percentage <- diff_table[diff_table$Country == r_label, c_label] / old_value
-                
-                if(is.infinite(diff_percentage))
-                {
-                  revision_sentences <- paste0(
-                    revision_sentences,
-                    sprintf("- For %s, %s has been revised (from %s).<br>",
-                            r_label, c_label,
-                            formatC(old_value, format = "f", digits = 2))
-                  )
-                } else {
-                  revision_sentences <- paste0(
-                    revision_sentences,
-                    sprintf("- For %s, %s has been revised by %.2f%% (from %s).<br>",
-                            r_label, c_label,
-                            100 * diff_percentage,   # scale to %
-                            formatC(old_value, format = "f", digits = 2))
-                    )
-                  }
+                revision_sentences <- paste0(
+                  revision_sentences,
+                  sprintf("- For %s, %s has been revised from %s.<br>",
+                          r_label, c_label,
+                          formatC(old_value, format = "f", digits = 2))
+                )
               }
+            }
                 # If there is no revision, check if it is a new release
                 else if (is.na(vintage_table[vintage_table$Country == r_label, c_label]) &&
                          !is.na(indic_colored[indic_colored$Country == r_label, c_label]))
                 {
-                  # Mark new data green (outside of new columns)
+                  # If so, mark new data green
                   indic_colored[indic_colored$Country == r_label, c_label] <- sprintf(
                     "<span style='background-color:lightgreen;'>%s</span>",
                     indic_colored[indic_colored$Country == r_label, c_label]
@@ -124,12 +114,10 @@ for(theme in themes) {
   [See full dataset here]({links_temp[[indic]]})
   <hr>
   ")
-      
       body_text <- paste0(body_text, "\n\n", indic_part)
     }
   }
 }
 
-#nchar(body_text)
+# Compose the mail
 email <- compose_email(body = md(body_text))
-#email
