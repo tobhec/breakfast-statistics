@@ -1,5 +1,7 @@
+# Set working directory
 setwd("C:/Users/Tobia/raspberry_pi/breakfast-statistics")
 
+# Load libraries
 library(blastula)
 library(glue)
 library(knitr)
@@ -7,12 +9,14 @@ library(MDstats)
 library(httr)
 library(jsonlite)
 
+# Run source scripts
 source("./R/functions.R")
 source("./R/data_loader.R")
 source("./R/data_processor.R")
 source("./R/vintage_saver.R")
 source("./R/config.R")
 
+# Produce and send the mails for each subscriber
 for (per in names(pref_list)) {
   
   # Try to define tables to be used in the script, based on the input by the subscriber

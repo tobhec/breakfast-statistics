@@ -1,7 +1,7 @@
 # List all CSV files in directory
 ########## THIS NEEDS TO BE MADE DYNAMIC BASED ON USER PREFERENCES #########
 #vintage_names <- list.files(paste0("C:/Users/Tobia/raspberry_pi/breakfast-statistics/vintages/", format(Sys.Date(), "%Y-%m-%d"), "/"), full.names = TRUE)
-vintage_names <- list.files(paste0("C:/Users/Tobia/raspberry_pi/breakfast-statistics/vintages/",  "2025-11-23/"), full.names = TRUE)
+vintage_names <- list.files(paste0("./vintages/",  "2025-11-23/"), full.names = TRUE)
 
 # Read them all into a list of data.tables
 vintages <- lapply(vintage_names, function(f) fread(f, header = TRUE))

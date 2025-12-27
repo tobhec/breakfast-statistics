@@ -1,14 +1,14 @@
 
-# 1) Sender and receiver info
+# Extract sender and receiver info
 from_email <- Sys.getenv("SENDER_MAIL")
 from_name  <- Sys.getenv("TITLE")
 to_email   <- mails_dict[per][[1]]
-subject    <- Sys.getenv("TITLE")
+subject    <- format(Sys.Date(), "%B %d, %Y")
 
-# 2) Extract HTML string
+# Extract HTML string
 html_string <- get_html_str(email)  # single character vector with all HTML
 
-# 3) Prepare request-body for Brevo transactional send
+# Prepare request-body for Brevo transactional send
 request_body <- list(
   sender = list(
     name  = from_name,
@@ -23,8 +23,7 @@ request_body <- list(
   htmlContent = html_string
 )
 
-# 4) POST to Brevo API
-#brevo_key <- Sys.getenv("api-key")  # recommended to store in env var
+# POST to Brevo API
 brevo_api_key <- Sys.getenv("BREVO_API_KEY")
 res <- httr::POST(
   url = "https://api.brevo.com/v3/smtp/email",
@@ -36,7 +35,7 @@ res <- httr::POST(
   body = jsonlite::toJSON(request_body, auto_unbox = TRUE)
 )
 
-# 5) Check response
+# Check response
 if (httr::status_code(res) %in% c(200,201,202)) {
   cat("Sent OK:", httr::content(res, "text"), "\n")
 } else {

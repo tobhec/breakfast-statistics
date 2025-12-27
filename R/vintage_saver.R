@@ -1,4 +1,3 @@
-setwd("C:/Users/Tobia/raspberry_pi/breakfast-statistics")
 
 # Create a new folder for todays date
 if (!dir.exists(paste0("./vintages/", format(Sys.Date(), "%Y-%m-%d")))) {

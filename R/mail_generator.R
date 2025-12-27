@@ -130,7 +130,6 @@ for(theme in themes) {
   }
 }
 
-nchar(body_text)
-
+#nchar(body_text)
 email <- compose_email(body = md(body_text))
-email
+#email

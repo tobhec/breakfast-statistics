@@ -86,28 +86,3 @@ for(indic in names(tables_list)) {
     tables_list[[indic]][, (drop_cols) := NULL]
   }
 }
-
-
-
-
-
-
-
-# How to nest through the new structure
-#themes <- names(indic_list)
-#for(theme in themes) {
-#  indicators <- names(indic_list[[theme]])
-#  print(names(indic_list[[theme]]))
-#  
-#  for(indic in indicators){
-#    properties <- names(indic_list[[theme]][[indic]])
-#    print(properties)
-#    
-#    for(prop in properties) {
-#      property <- indic_list[[theme]][[indic]][[prop]]
-#      print(property)
-#      
-#    }
-#    
-#  }
-#}
