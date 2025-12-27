@@ -84,9 +84,8 @@ for(theme in themes) {
                   sprintf("- For %s, %s has been revised from %s.<br>",
                           r_label, c_label,
                           formatC(old_value, format = "f", digits = 2))
-                )
-              }
-            }
+                  )
+                }
                 # If there is no revision, check if it is a new release
                 else if (is.na(vintage_table[vintage_table$Country == r_label, c_label]) &&
                          !is.na(indic_colored[indic_colored$Country == r_label, c_label]))
