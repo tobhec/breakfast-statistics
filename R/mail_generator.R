@@ -1,5 +1,5 @@
 body_text <- paste0(
-  "## Daily Data Update - ", format(Sys.Date(), "%B %d, %Y"), "\n",
+  "## Breakfast Statistics - ", format(Sys.Date(), "%B %d, %Y"), "\n",
   
   #  "Data was downloaded around 07 AM Brussels time.\n\n",
   

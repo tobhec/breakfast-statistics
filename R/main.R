@@ -1,9 +1,11 @@
-setwd("C:/Users/Tobia/raspberry_pi/stats-updater")
+setwd("C:/Users/Tobia/raspberry_pi/breakfast-statistics")
 
 library(blastula)
 library(glue)
 library(knitr)
 library(MDstats)
+library(httr)
+library(jsonlite)
 
 source("./R/functions.R")
 source("./R/data_loader.R")
@@ -94,7 +96,7 @@ for (per in names(pref_list)) {
   tryCatch(
     {
       # Send the mail
-      #source("./R/email_sender.R")
+      source("./R/email_sender.R")
     },
     error = function(e) {
       cat("Error sending the mail or saving as vintage for:", per, "\n", e$message)
