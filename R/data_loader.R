@@ -1036,7 +1036,7 @@ infl_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.FP_CPI_TOTL_ZG.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     infl_a_wb <- as.data.table(mds(sdmx_code, 
                                    #startPeriod = 2024, 
-                                   ccode = "iso2c"))
+                                   ccode = "EC"))
     setnames(infl_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1051,7 +1051,7 @@ ca_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.BN_CAB_XOKA_GD_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     ca_a_wb <- as.data.table(mds(sdmx_code, 
                                  #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                 ccode = "iso2c"))
+                                 ccode = "EC"))
     setnames(ca_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1066,7 +1066,7 @@ exp_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.NE_EXP_GNFS_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     exp_a_wb <- as.data.table(mds(sdmx_code, 
                                   #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                  ccode = "iso2c"))
+                                  ccode = "EC"))
     setnames(exp_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1081,7 +1081,7 @@ imp_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.NE_IMP_GNFS_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     imp_a_wb <- as.data.table(mds(sdmx_code, 
                                   #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                  ccode = "iso2c"))
+                                  ccode = "EC"))
     setnames(imp_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1096,7 +1096,7 @@ fdiin_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.BX_KLT_DINV_WD_GD_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     fdiin_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                    ccode = "iso2c"))
+                                    ccode = "EC"))
     setnames(fdiin_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1111,7 +1111,7 @@ fdiout_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.BM_KLT_DINV_WD_GD_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     fdiout_a_wb <- as.data.table(mds(sdmx_code, 
                                      #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                     ccode = "iso2c"))
+                                     ccode = "EC"))
     setnames(fdiout_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1126,7 +1126,7 @@ gdpg_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.NY_GDP_MKTP_KD_ZG.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdpg_a_wb <- as.data.table(mds(sdmx_code, 
                                    #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                   ccode = "iso2c"))
+                                   ccode = "EC"))
     setnames(gdpg_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1141,7 +1141,7 @@ gdpcg_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.NY_GDP_PCAP_KD_ZG.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdpcg_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                    ccode = "iso2c"))
+                                    ccode = "EC"))
     setnames(gdpcg_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1156,7 +1156,7 @@ gdpc_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.NY_GDP_PCAP_KD.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdpc_a_wb <- as.data.table(mds(sdmx_code, 
                                    #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                   ccode = "iso2c"))
+                                   ccode = "EC"))
     setnames(gdpc_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1171,7 +1171,7 @@ gdp_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.NY_GDP_MKTP_KD.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdp_a_wb <- as.data.table(mds(sdmx_code, 
                                   #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                  ccode = "iso2c"))
+                                  ccode = "EC"))
     setnames(gdp_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1186,7 +1186,7 @@ ist10_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_DST_10TH_10.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     ist10_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                    ccode = "iso2c"))
+                                    ccode = "EC"))
     setnames(ist10_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1201,7 +1201,7 @@ ist20_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_DST_05TH_20.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     ist20_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                    ccode = "iso2c"))
+                                    ccode = "EC"))
     setnames(ist20_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1216,7 +1216,7 @@ isl10_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_DST_FRST_10.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     isl10_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                    ccode = "iso2c"))
+                                    ccode = "EC"))
     setnames(isl10_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1231,7 +1231,7 @@ isl20_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_DST_FRST_20.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     isl20_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                    ccode = "iso2c"))
+                                    ccode = "EC"))
     setnames(isl20_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1246,7 +1246,7 @@ povhc3_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_POV_DDAY.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povhc3_a_wb <- as.data.table(mds(sdmx_code, 
                                      #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                     ccode = "iso2c"))
+                                     ccode = "EC"))
     setnames(povhc3_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1261,7 +1261,7 @@ povhc42_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_POV_LMIC.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povhc42_a_wb <- as.data.table(mds(sdmx_code, 
                                       #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                      ccode = "iso2c"))
+                                      ccode = "EC"))
     setnames(povhc42_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1276,7 +1276,7 @@ povhc83_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_POV_UMIC.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povhc83_a_wb <- as.data.table(mds(sdmx_code, 
                                       #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                      ccode = "iso2c"))
+                                      ccode = "EC"))
     setnames(povhc83_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1291,7 +1291,7 @@ povgap3_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_POV_GAPS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povgap3_a_wb <- as.data.table(mds(sdmx_code, 
                                       #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                      ccode = "iso2c"))
+                                      ccode = "EC"))
     setnames(povgap3_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1306,7 +1306,7 @@ povgap42_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_POV_LMIC_GP.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povgap42_a_wb <- as.data.table(mds(sdmx_code, 
                                        #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                       ccode = "iso2c"))
+                                       ccode = "EC"))
     setnames(povgap42_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1321,7 +1321,7 @@ povgap83_a_wb <- tryCatch(
     sdmx_code <- "WB/WDI/A.SI_POV_UMIC_GP.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povgap83_a_wb <- as.data.table(mds(sdmx_code, 
                                        #startPeriod = format(Sys.Date() - 365, "%Y"), 
-                                       ccode = "iso2c"))
+                                       ccode = "EC"))
     setnames(povgap83_a_wb, "REF_AREA", "geo")
   },
   error = function(e) {
@@ -1561,7 +1561,6 @@ raw_data_list <- list(
            "dropdown" = "geo",
            "contains_geo" = TRUE
       ),
-    
     "gfcf_a_estat_mip_2" =
       list("title" = "Investment in fixed assets (gross fixed capital formation), annual data",
            "data" = gfcf_a_estat_mip,
