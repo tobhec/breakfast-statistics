@@ -32,58 +32,63 @@ for(theme in themes) {
       # Initialise revision explanation
       revision_sentences <- ""
       
-      # Check that the indicator is part of the vintage dataset to do the revision check
+      # Check that the vintage dataset is not missing
       if(indic %in% names(vintages)) {
-        revision_table <- as.data.frame(revision_list[[indic]]) # TRUE/FALSE table
-        diff_table     <- as.data.frame(diff_list[[indic]]) # numeric differences
-        vintage_table <- as.data.frame(vintages[[indic]]) #vintages
-        
-        # Extract rows
-        row_labels <- indic_colored$Country
-        row_labels_rev <- revision_table$Country
+        revision_table <- as.data.frame(revision_list[[indic]])
+        diff_table     <- as.data.frame(diff_list[[indic]])
+        vintage_table <- as.data.frame(vintages[[indic]])
         
         # Extract new columns
         col_names <- names(indic_colored)
         new_cols <- setdiff(names(indic_colored[-1]), names(vintage_table)[-1])
         new_cols <- new_cols[new_cols > max(names(vintage_table)[-1])]
         
+        # Extract rows
+        row_label_col <- if(dropdowns_list[[indic]] == "geo") "Country" else "Currency"
+        row_labels <- indic_colored[[row_label_col]]
+        row_labels_rev <- revision_table[[row_label_col]]
+        
         # Check each relevant cell if there has been new data or a revision
         # 1. Check for new releases (in new columns)
         for (row_label in row_labels) {
-          for (c_label in col_names[-1]) {   # skip ID column
+          # Find the row index corresponding to the label
+          row_index <- which(indic_colored[[row_label_col]] == row_label)
+          
+          # Loop over all columns except the first (which is row labels)
+          for (c_label in col_names[-1]) {
             
-            if (c_label %in% new_cols && 
-                !is.na(i_temp[[indic]][row_label, c_label])) {
+            # Check if this is a new column
+            if (c_label %in% new_cols && !is.na(indic_colored[row_index, c_label])) {
               
-                  # Mark new data green
-                  indic_colored[row_label, c_label] <- sprintf(
-                    "<span style='background-color:lightgreen;'>%s</span>",
-                    indic_colored[row_label, c_label]
-                  )
+              # Wrap the value in a green span
+              indic_colored[row_index, c_label] <- sprintf(
+                "<span style='background-color:lightgreen;'>%s</span>",
+                indic_colored[row_index, c_label]
+              )
             }
           }
         }
-        
         # 2. Check for revisions and new releases (in pre-existing columns)
-          for (r_label in row_labels_rev) {
-            for (c_label in names(revision_table)[-1]) {
+        if(length(row_labels_rev) > 0) {
+            for (r_label in row_labels_rev) {
+              for (c_label in names(revision_table)[-1]) {
                 
-              # If revision happened
-              if (isTRUE(as.logical(revision_table[revision_table$Country == r_label, c_label]))) {
-                
-                # Mark number yellow
-                indic_colored[indic_colored$Country == r_label, c_label] <- sprintf(
-                  "<span style='background-color:#FFD580;'>%s</span>",
-                  indic_colored[indic_colored$Country == r_label, c_label]
-                )
-              
-                # Add sentence explaining the revision
-                old_value <- vintage_table[vintage_table$Country == r_label, c_label]
-                revision_sentences <- paste0(
-                  revision_sentences,
-                  sprintf("- For %s, %s has been revised from %s.<br>",
-                          r_label, c_label,
-                          formatC(old_value, format = "f", digits = 2))
+                # If revision happened
+                if (isTRUE(as.logical(revision_table[revision_table$Country == r_label, c_label]))) {
+                  
+                  # Mark number yellow
+                  indic_colored[indic_colored$Country == r_label, c_label] <- sprintf(
+                    "<span style='background-color:#FFD580;'>%s</span>",
+                    indic_colored[indic_colored$Country == r_label, c_label]
+                  )
+                  
+                  # Add sentence explaining the revision
+                  old_value <- vintage_table[vintage_table$Country == r_label, c_label]
+                  revision_sentences <- paste0(
+                    revision_sentences,
+                    sprintf("- For %s, %s has been revised from %s.<br>",
+                            r_label, c_label,
+                            formatC(old_value, format = "f", digits = 2))
                   )
                 }
                 # If there is no revision, check if it is a new release
@@ -96,8 +101,16 @@ for(theme in themes) {
                     indic_colored[indic_colored$Country == r_label, c_label]
                   )
                 }
-              }
+            }
           }
+        }
+      } else {
+        # Since vintage dataset is missing here, add a footnote to this table 
+        # that there was no revision check executed
+        revision_sentences <- paste0(
+          revision_sentences,
+          "There was no vintage data available for this table to compare with."
+        )
       }
       
       # Build HTML table

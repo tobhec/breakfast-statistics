@@ -71,9 +71,11 @@ for (per in names(pref_list)) {
       for (code in i_codes) {
         if(dropdowns_list[[code]] == "geo") {
           i_temp[[code]]$Country <- ccode(i_temp[[code]]$Country, "iso2c", "name.en")
-          diff_list[[code]]$Country <- ccode(diff_list[[code]]$Country, "iso2c", "name.en")
-          revision_list[[code]]$Country <- ccode(revision_list[[code]]$Country, "iso2c", "name.en")
-          vintages[[code]]$Country <- ccode(vintages[[code]]$Country, "iso2c", "name.en")
+          if (!is.null(vintages[[code]])) {
+            diff_list[[code]]$Country <- ccode(diff_list[[code]]$Country, "iso2c", "name.en")
+            revision_list[[code]]$Country <- ccode(revision_list[[code]]$Country, "iso2c", "name.en")
+            vintages[[code]]$Country <- ccode(vintages[[code]]$Country, "iso2c", "name.en")
+          }
         }
       }
     },
@@ -99,7 +101,7 @@ for (per in names(pref_list)) {
   tryCatch(
     {
       # Send the mail
-      source("./R/email_sender.R")
+      #source("./R/email_sender.R")
     },
     error = function(e) {
       cat("Error sending the mail or saving as vintage for:", per, "\n", e$message)
