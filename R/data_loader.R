@@ -85,7 +85,7 @@ une_a_estat <- tryCatch(
   }
 )
 
-# Export volume indices
+# Export volume indices, annual
 expi_a_estat <- tryCatch(
   {
     sdmx_code <- "ESTAT/tet00001/A.IVOL_EXP.TOTAL.WORLD."
@@ -93,6 +93,78 @@ expi_a_estat <- tryCatch(
   },
   error = function(e) {
     cat("Error loading expi_a_estat:", e$message, "\n")
+    data.table()
+  }
+)
+
+# Import volume indices, annual
+impi_a_estat <- tryCatch(
+  {
+    sdmx_code <- "ESTAT/tet00001/A.IVOL_IMP.TOTAL.WORLD."
+    as.data.table(mds(sdmx_code, startPeriod = format(Sys.Date() - (20*YEAR), "%Y")))
+  },
+  error = function(e) {
+    cat("Error loading impi_a_estat:", e$message, "\n")
+    data.table()
+  }
+)
+
+# Monthly SCA exports month on month
+exp_m_estat <- tryCatch(
+  {
+    sdmx_code <- "ESTAT/ext_st_27_2020msbec/M.EXP.TRD_VAL_SCA_RT1.WORLD.TOTAL."
+    as.data.table(mds(sdmx_code, startPeriod = format(Sys.Date() - (20*MONTH), "%Y-%m")))
+  },
+  error = function(e) {
+    cat("Error loading exp_m_estat:", e$message, "\n")
+    data.table()
+  }
+)
+
+# Monthly SCA imports month on month
+imp_m_estat <- tryCatch(
+  {
+    sdmx_code <- "ESTAT/ext_st_27_2020msbec/M.IMP.TRD_VAL_SCA_RT1.WORLD.TOTAL."
+    as.data.table(mds(sdmx_code, startPeriod = format(Sys.Date() - (20*MONTH), "%Y-%m")))
+  },
+  error = function(e) {
+    cat("Error loading imp_m_estat:", e$message, "\n")
+    data.table()
+  }
+)
+
+# Monthly SCA exports month on month
+expy_m_estat <- tryCatch(
+  {
+    sdmx_code <- "ESTAT/ext_st_27_2020msbec/M.EXP.TRD_VAL_RT12.WORLD.TOTAL."
+    as.data.table(mds(sdmx_code, startPeriod = format(Sys.Date() - (20*MONTH), "%Y-%m")))
+  },
+  error = function(e) {
+    cat("Error loading expy_m_estat:", e$message, "\n")
+    data.table()
+  }
+)
+
+# Monthly exports year on year
+expy_m_estat <- tryCatch(
+  {
+    sdmx_code <- "ESTAT/ext_st_27_2020msbec/M.EXP.TRD_VAL_RT12.WORLD.TOTAL."
+    as.data.table(mds(sdmx_code, startPeriod = format(Sys.Date() - (20*MONTH), "%Y-%m")))
+  },
+  error = function(e) {
+    cat("Error loading exp_m_estat:", e$message, "\n")
+    data.table()
+  }
+)
+
+# Monthly exports year on year
+impy_m_estat <- tryCatch(
+  {
+    sdmx_code <- "ESTAT/ext_st_27_2020msbec/M.EXP.TRD_VAL_RT12.WORLD.TOTAL."
+    as.data.table(mds(sdmx_code, startPeriod = format(Sys.Date() - (20*MONTH), "%Y-%m")))
+  },
+  error = function(e) {
+    cat("Error loading impy_m_estat:", e$message, "\n")
     data.table()
   }
 )
@@ -1680,11 +1752,50 @@ raw_data_list <- list(
            "contains_geo" = TRUE
       )
   ),
-  
-  "External sector" = list(
+  "International trade" = list(
     
+    "exp_m_estat" =
+      list("title" = "Export of goods (seasonally and calendar adjusted), monthly data",
+           "data" = exp_m_estat,
+           "unit" = "1-month % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/EXT_ST_27_2020MSBEC__custom_19495872/default/table",
+           "geo" = unique(exp_m_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "imp_m_estat" =
+      list("title" = "Import of goods (seasonally and calendar adjusted), monthly data",
+           "data" = imp_m_estat,
+           "unit" = "1-month % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/EXT_ST_27_2020MSBEC__custom_19495960/default/table",
+           "geo" = unique(imp_m_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "expy_m_estat" =
+      list("title" = "Export of goods, monthly data",
+           "data" = expy_m_estat,
+           "unit" = "1-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/EXT_ST_27_2020MSBEC__custom_19496074/default/table",
+           "geo" = unique(expy_m_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "impy_m_estat" =
+      list("title" = "Import of goods, monthly data",
+           "data" = impy_m_estat,
+           "unit" = "1-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/EXT_ST_27_2020MSBEC__custom_19496491/default/table",
+           "geo" = unique(impy_m_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
     "expi_a_estat" =
-      list("title" = "Export volume index, annual data",
+      list("title" = "Export volume index (goods), annual data",
            "data" = expi_a_estat,
            "unit" = "Index - 2021 = 100",
            "source" = "Eurostat",
@@ -1693,6 +1804,71 @@ raw_data_list <- list(
            "dropdown" = "geo",
            "contains_geo" = TRUE
       ),
+    "impi_a_estat" =
+      list("title" = "Import volume index (goods), annual data",
+           "data" = impi_a_estat,
+           "unit" = "Index - 2021 = 100",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tet00001__custom_19496870/default/table",
+           "geo" = unique(impi_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "epmip_a_estat_2" =
+      list("title" = "Export performance against advanced economies, annual data",
+           "data" = epmip_a_estat,
+           "unit" = "3-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsbp60__custom_19122349/default/table",
+           "geo" = unique(epmip_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "ems_a_estat_mip_2" =
+      list("title" = "Export market shares of world exports, annual data",
+           "data" = ems_a_estat_mip,
+           "unit" = "3-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsex10__custom_19122105/default/table",
+           "geo" = unique(ems_a_estat_mip$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "ntbe_a_estat_mip_2" =
+      list("title" = "Trade balance in energy, annual data",
+           "data" = ntbe_a_estat_mip,
+           "unit" = "% of GDP",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsen10__custom_19122087/default/table",
+           "geo" = unique(ntbe_a_estat_mip$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "exp_a_wb" =
+      list("title" = "Exports of goods and services, annual data",
+           "data" = exp_a_wb,
+           "unit" = "% of GDP",
+           "source" = "World Bank",
+           "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "geo" = unique(exp_a_wb$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "imp_a_wb" =
+      list("title" = "Imports of goods and services, annual data",
+           "data" = imp_a_wb,
+           "unit" = "% of GDP",
+           "source" = "World Bank",
+           "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "geo" = unique(imp_a_wb$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      )
+  ),
+    
+  
+  "External balances" = list(
+    
     "ca_q_estat" =
       list("title" = "Current account balance, quarterly data",
            "data" = ca_q_estat,
@@ -1763,26 +1939,6 @@ raw_data_list <- list(
            "dropdown" = "geo",
            "contains_geo" = TRUE
       ),
-    "epmip_a_estat_2" =
-      list("title" = "Export performance against advanced economies, annual data",
-           "data" = epmip_a_estat,
-           "unit" = "3-year % change",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsbp60__custom_19122349/default/table",
-           "geo" = unique(epmip_a_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "ems_a_estat_mip_2" =
-      list("title" = "Export market shares of world exports, annual data",
-           "data" = ems_a_estat_mip,
-           "unit" = "3-year % change",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsex10__custom_19122105/default/table",
-           "geo" = unique(ems_a_estat_mip$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
     "nendi_a_estat_mip_2" =
       list("title" = "Net international investment position excluding non-defaultable instruments, annual data",
            "data" = nendi_a_estat_mip,
@@ -1793,16 +1949,6 @@ raw_data_list <- list(
            "dropdown" = "geo",
            "contains_geo" = TRUE
       ),
-    "ntbe_a_estat_mip_2" =
-      list("title" = "Trade balance in energy, annual data",
-           "data" = ntbe_a_estat_mip,
-           "unit" = "% of GDP",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsen10__custom_19122087/default/table",
-           "geo" = unique(ntbe_a_estat_mip$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
     "ca_a_wb" =
       list("title" = "Current account balance, annual data",
            "data" = ca_a_wb,
@@ -1810,26 +1956,6 @@ raw_data_list <- list(
            "source" = "World Bank",
            "link" = "https://databank.worldbank.org/source/world-development-indicators",
            "geo" = unique(ca_a_wb$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "exp_a_wb" =
-      list("title" = "Exports of goods and services, annual data",
-           "data" = exp_a_wb,
-           "unit" = "% of GDP",
-           "source" = "World Bank",
-           "link" = "https://databank.worldbank.org/source/world-development-indicators",
-           "geo" = unique(exp_a_wb$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "imp_a_wb" =
-      list("title" = "Imports of goods and services, annual data",
-           "data" = imp_a_wb,
-           "unit" = "% of GDP",
-           "source" = "World Bank",
-           "link" = "https://databank.worldbank.org/source/world-development-indicators",
-           "geo" = unique(imp_a_wb$geo),
            "dropdown" = "geo",
            "contains_geo" = TRUE
       ),
