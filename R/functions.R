@@ -20,16 +20,21 @@ calc_diff <- function(new_table, old_table) {
     names(old_dt)[sapply(old_dt, is.numeric)]
   )
   
-  # Start diff table with ID column
-  diff_dt <- new_dt[, ..id_col]
-  setnames(diff_dt, id_col, id_col)
-  
-  # Calculate differences for shared columns
-  for (col in shared_cols) {
-    diff_dt[[col]] <- new_dt[[col]] - old_dt[[col]]
-  }
-  
-  return(diff_dt)
+  #if(length(shared_cols) > 0)
+  #{
+    # Start diff table with ID column
+    diff_dt <- new_dt[, ..id_col]
+    setnames(diff_dt, id_col, id_col)
+    
+    # Calculate differences for shared columns
+    for (col in shared_cols) {
+      diff_dt[[col]] <- new_dt[[col]] - old_dt[[col]]
+    }
+    
+    return(diff_dt)
+  #} else {
+  #  return(NULL)
+  #}
 }
 
 # Function to compare and flag revisions
@@ -39,9 +44,14 @@ check_for_revisions <- function(dt) {
   # Boolean table: TRUE if abs(diff) > 0
   diff_flags <- abs(dt[, -1, with = FALSE]) > 0
   
-  # Put ID column back in front
-  revision_table <- as.data.frame(cbind(dt[[1]], diff_flags))
-  setnames(revision_table, "V1", id_col)  # restore proper column name
+  if (
+    NROW(diff_flags) > 0 &&
+    NCOL(diff_flags) > 0) {
+    revision_table <- as.data.frame(cbind(dt[[1]], diff_flags))
+    setnames(revision_table, "V1", id_col)
+  } else {
+    revision_table <- data.frame(V1 = logical(0))
+  }
   
   return(revision_table)
 }
