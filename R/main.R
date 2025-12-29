@@ -14,7 +14,7 @@ source("./R/functions.R")
 source("./R/data_loader.R")
 source("./R/data_processor.R")
 source("./R/vintage_saver.R")
-source("./R/config.R")
+source("./R/config_automatic.R")
 
 # Produce and send the mails for each subscriber
 for (per in names(pref_list)) {
@@ -23,7 +23,7 @@ for (per in names(pref_list)) {
   tryCatch(
     {
       # Extract the selections by the subscriber
-      i_selection <- pref_list[[per]]$indics
+      i_selection <- pref_list[[per]]
       i_codes <- names(i_selection)
       
       # Filter for the selections
@@ -70,10 +70,10 @@ for (per in names(pref_list)) {
     {
       for (code in i_codes) {
         if(dropdowns_list[[code]] == "geo") {
-          i_temp[[code]]$Country <- ccode(i_temp[[code]]$Country, "iso2c", "name.en")
-          diff_list[[code]]$Country <- ccode(diff_list[[code]]$Country, "iso2c", "name.en")
-          revision_list[[code]]$Country <- ccode(revision_list[[code]]$Country, "iso2c", "name.en")
-          vintages[[code]]$Country <- ccode(vintages[[code]]$Country, "iso2c", "name.en")
+          i_temp[[code]]$Country <- ccode(i_temp[[code]]$Country, "EC", "name.en")
+          diff_list[[code]]$Country <- ccode(diff_list[[code]]$Country, "EC", "name.en")
+          revision_list[[code]]$Country <- ccode(revision_list[[code]]$Country, "EC", "name.en")
+          vintages[[code]]$Country <- ccode(vintages[[code]]$Country, "EC", "name.en")
         }
       }
     },
