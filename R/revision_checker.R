@@ -24,7 +24,6 @@ for (indic in names(vintages)) {
     vintages[indic][[1]] <- dcast(vintages[indic][[1]], Currency ~ Time, value.var = "Value")
   }  
 }
-
   
 # Calculate differences between new data and vintages
 diff_list <- Map(calc_diff, indics_to_compare, vintages)

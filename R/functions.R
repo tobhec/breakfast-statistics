@@ -20,21 +20,17 @@ calc_diff <- function(new_table, old_table) {
     names(old_dt)[sapply(old_dt, is.numeric)]
   )
   
-  #if(length(shared_cols) > 0)
-  #{
-    # Start diff table with ID column
-    diff_dt <- new_dt[, ..id_col]
-    setnames(diff_dt, id_col, id_col)
+  # Start diff table with ID column
+  diff_dt <- new_dt[, ..id_col]
+  setnames(diff_dt, id_col, id_col)
     
-    # Calculate differences for shared columns
-    for (col in shared_cols) {
-      diff_dt[[col]] <- new_dt[[col]] - old_dt[[col]]
-    }
+  # Calculate differences for shared columns
+  for (col in shared_cols) {
+    diff_dt[[col]] <- new_dt[[col]] - old_dt[[col]]
+  }
     
-    return(diff_dt)
-  #} else {
-  #  return(NULL)
-  #}
+  return(diff_dt)
+
 }
 
 # Function to compare and flag revisions

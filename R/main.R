@@ -14,7 +14,7 @@ source("./R/functions.R")
 source("./R/data_loader.R")
 source("./R/data_processor.R")
 source("./R/vintage_saver.R")
-source("./R/config_automatic.R")
+source("./R/sub_loader.R")
 
 # Produce and send the mails for each subscriber
 for (per in names(pref_list)) {
@@ -43,9 +43,13 @@ for (per in names(pref_list)) {
   tryCatch(
     {
       for (code in i_codes) {
+        # Check that the new data exists
+        if (NROW(tables_list_raw[code][[1]]) > 0 &&
+            NCOL(tables_list_raw[code][[1]]) > 0) {
           cross_section_filters <- i_selection[[code]]$Filter
           period   <- i_selection[[code]]$Period
           source("./R/data_filterer.R")
+        }
       }
     },
     error = function(e) {
@@ -69,7 +73,9 @@ for (per in names(pref_list)) {
   tryCatch(
     {
       for (code in i_codes) {
-        if(dropdowns_list[[code]] == "geo") {
+        if(NROW(tables_list_raw[code][[1]]) > 0 &&
+           NCOL(tables_list_raw[code][[1]]) > 0 &&
+           dropdowns_list[[code]] == "geo") {
           i_temp[[code]]$Country <- ccode(i_temp[[code]]$Country, "iso2c", "name.en")
           if (!is.null(vintages[[code]])) {
             diff_list[[code]]$Country <- ccode(diff_list[[code]]$Country, "iso2c", "name.en")

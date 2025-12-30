@@ -1,5 +1,5 @@
 # RStudio / R files
-R/config.R
+R/sub_loader_manual.R
 
 # Vintages
 vintages/*

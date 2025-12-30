@@ -1445,90 +1445,6 @@ raw_data_list <- list(
       )
   ),
   
-  "Interest rates" = list(
-    
-    "gbyemu_m_estat" = 
-      list("title" = "Government bond yields (EMU convergence data) - 10 year maturity, monthly data",
-           "data" = gbyemu_m_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_m__custom_19121918/default/table",
-           "geo" = unique(gbyemu_m_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "gbyemu_q_estat" = 
-      list("title" = "Government bond yields (EMU convergence data) - 10 year maturity, quarterly data",
-           "data" = gbyemu_q_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_q__custom_19121928/default/table",
-           "geo" = unique(gbyemu_q_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "gbyemu_a_estat" = 
-      list("title" = "Government bond yields (EMU convergence data) - 10 year maturity, annual data",
-           "data" = gbyemu_a_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_a__custom_19121932/default/table",
-           "geo" = unique(gbyemu_a_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "gby_m_estat" = 
-      list("title" = "Government bond yields - 10 year maturity, monthly data",
-           "data" = gby_m_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_gby10_m__custom_19121907/default/table",
-           "geo" = unique(gby_m_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "gby_a_estat" = 
-      list("title" = "Government bond yields - 10 year maturity, annual data",
-           "data" = gby_a_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_gby10_a__custom_19121912/default/table",
-           "geo" = unique(gby_a_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "mmir_m_estat" = 
-      list("title" = "Money market interest rates (3-month rate), monthly data",
-           "data" = mmir_m_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_st_m__custom_19121938/default/table",
-           "geo" = unique(mmir_m_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "mmir_q_estat" = 
-      list("title" = "Money market interest rates (3-month rate), quarterly data",
-           "data" = mmir_q_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_st_q__custom_19121941/default/table",
-           "geo" = unique(mmir_q_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "mmir_a_estat" = 
-      list("title" = "Money market interest rates (3-month rate), annual data",
-           "data" = mmir_a_estat,
-           "unit" = "%",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_st_a__custom_19121947/default/table",
-           "geo" = unique(mmir_a_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      )
-  ),
-  
   "Economic growth" = list(
     
     "gdp_q_estat" =
@@ -1624,133 +1540,6 @@ raw_data_list <- list(
       )
   ),
   
-  "Housing" = list(
-    
-    "hpi_q_estat" =
-      list("title" = "Nominal house price index, quarterly data",
-           "data" = hpi_q_estat,
-           "unit" = "Index - 2015 = 100",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q__custom_19121612/default/table",
-           "geo" = unique(hpi_q_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "hpc_q_estat" =
-      list("title" = "Nominal house price index, quarterly data",
-           "data" = hpc_q_estat,
-           "unit" = "1-quarter % change",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q__custom_19122422/default/table",
-           "geo" = unique(hpc_q_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "hpca_q_estat" =
-      list("title" = "Nominal house price index, quarterly data",
-           "data" = hpca_q_estat,
-           "unit" = "1-year % change",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q__custom_19121636/default/table",
-           "geo" = unique(hpca_q_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "hpi_a_estat" =
-      list("title" = "Nomnal house price index, annual data",
-           "data" = hpi_a_estat,
-           "unit" = "Annual average index - 2015 = 100",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_a__custom_19121643/default/table",
-           "geo" = unique(hpi_a_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "hpc_a_estat" =
-      list("title" = "Nominal house price index, annual data",
-           "data" = hpc_a_estat,
-           "unit" = "Average 1-year % change",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_a__custom_19121646/default/table",
-           "geo" = unique(hpc_a_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "pti_a_estat_mip_2" =
-      list("title" = "Standardised house price-to-income ratio, annual data",
-           "data" = pti_a_estat_mip,
-           "unit" = "% deviation from long term average",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsho60__custom_19122153/default/table",
-           "geo" = unique(pti_a_estat_mip$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "buildp_a_estat_mip_2" =
-      list("title" = "Building permits, annual data",
-           "data" = buildp_a_estat_mip,
-           "unit" = "m2 per 1000 inhabitants",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsho50__custom_19122160/default/table",
-           "geo" = unique(buildp_a_estat_mip$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      )
-  ),
-  
-  "Financial sector" = list(
-    
-    "tfsl_a_estat" =
-      list("title" = "Total financial sector liabilites (non-consolidated), annual data",
-           "data" = tfsl_a_estat,
-           "unit" = "% of GDP",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/nasa_10_f_bs__custom_19121953/default/table",
-           "geo" = unique(tfsl_a_estat$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "gnpls_a_ecb" =
-      list("title" = "Gross non-performing loans, domestic and foreign entities, annual data",
-           "data" = gnpls_a_ecb,
-           "unit" = "% of gross loans",
-           "source" = "European Central Bank",
-           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
-           "geo" = unique(gnpls_a_ecb$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "t1cr_a_ecb" =
-      list("title" = "Tier-1 capital ratio banking sector, annual data",
-           "data" = t1cr_a_ecb,
-           "unit" = "% of risk-weighted assets",
-           "source" = "European Central Bank",
-           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
-           "geo" = unique(t1cr_a_ecb$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "roeb_a_ecb" =
-      list("title" = "Return on equity of banks, annual data",
-           "data" = roeb_a_ecb,
-           "unit" = "%",
-           "source" = "European Central Bank",
-           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
-           "geo" = unique(roeb_a_ecb$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      ),
-    "cbl_a_ecb" =
-      list("title" = "Consolidated banking leverage, domestic and foreign entities (asset-to-equity multiple), annual data",
-           "data" = cbl_a_ecb,
-           "unit" = "% of GDP",
-           "source" = "European Central Bank",
-           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
-           "geo" = unique(cbl_a_ecb$geo),
-           "dropdown" = "geo",
-           "contains_geo" = TRUE
-      )
-  ),
   "International trade" = list(
     
     "exp_m_estat" =
@@ -1864,7 +1653,7 @@ raw_data_list <- list(
            "contains_geo" = TRUE
       )
   ),
-    
+  
   
   "External balances" = list(
     
@@ -2019,6 +1808,218 @@ raw_data_list <- list(
            "source" = "Eurostat",
            "link" = "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1__custom_19121604/default/table",
            "geo" = unique(ggdeb_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      )
+  ),
+  
+  "Interest rates" = list(
+    
+    "gbyemu_m_estat" = 
+      list("title" = "Government bond yields (EMU convergence data) - 10 year maturity, monthly data",
+           "data" = gbyemu_m_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_m__custom_19121918/default/table",
+           "geo" = unique(gbyemu_m_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "gbyemu_q_estat" = 
+      list("title" = "Government bond yields (EMU convergence data) - 10 year maturity, quarterly data",
+           "data" = gbyemu_q_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_q__custom_19121928/default/table",
+           "geo" = unique(gbyemu_q_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "gbyemu_a_estat" = 
+      list("title" = "Government bond yields (EMU convergence data) - 10 year maturity, annual data",
+           "data" = gbyemu_a_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_a__custom_19121932/default/table",
+           "geo" = unique(gbyemu_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "gby_m_estat" = 
+      list("title" = "Government bond yields - 10 year maturity, monthly data",
+           "data" = gby_m_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_gby10_m__custom_19121907/default/table",
+           "geo" = unique(gby_m_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "gby_a_estat" = 
+      list("title" = "Government bond yields - 10 year maturity, annual data",
+           "data" = gby_a_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_lt_gby10_a__custom_19121912/default/table",
+           "geo" = unique(gby_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "mmir_m_estat" = 
+      list("title" = "Money market interest rates (3-month rate), monthly data",
+           "data" = mmir_m_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_st_m__custom_19121938/default/table",
+           "geo" = unique(mmir_m_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "mmir_q_estat" = 
+      list("title" = "Money market interest rates (3-month rate), quarterly data",
+           "data" = mmir_q_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_st_q__custom_19121941/default/table",
+           "geo" = unique(mmir_q_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "mmir_a_estat" = 
+      list("title" = "Money market interest rates (3-month rate), annual data",
+           "data" = mmir_a_estat,
+           "unit" = "%",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/irt_st_a__custom_19121947/default/table",
+           "geo" = unique(mmir_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      )
+  ),
+  
+  "Financial sector" = list(
+    
+    "tfsl_a_estat" =
+      list("title" = "Total financial sector liabilites (non-consolidated), annual data",
+           "data" = tfsl_a_estat,
+           "unit" = "% of GDP",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/nasa_10_f_bs__custom_19121953/default/table",
+           "geo" = unique(tfsl_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "gnpls_a_ecb" =
+      list("title" = "Gross non-performing loans, domestic and foreign entities, annual data",
+           "data" = gnpls_a_ecb,
+           "unit" = "% of gross loans",
+           "source" = "European Central Bank",
+           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
+           "geo" = unique(gnpls_a_ecb$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "t1cr_a_ecb" =
+      list("title" = "Tier-1 capital ratio banking sector, annual data",
+           "data" = t1cr_a_ecb,
+           "unit" = "% of risk-weighted assets",
+           "source" = "European Central Bank",
+           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
+           "geo" = unique(t1cr_a_ecb$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "roeb_a_ecb" =
+      list("title" = "Return on equity of banks, annual data",
+           "data" = roeb_a_ecb,
+           "unit" = "%",
+           "source" = "European Central Bank",
+           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
+           "geo" = unique(roeb_a_ecb$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "cbl_a_ecb" =
+      list("title" = "Consolidated banking leverage, domestic and foreign entities (asset-to-equity multiple), annual data",
+           "data" = cbl_a_ecb,
+           "unit" = "% of GDP",
+           "source" = "European Central Bank",
+           "link" = "https://data.ecb.europa.eu/data/datasets/CBD2?dataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29&advFilterDataset%5B0%5D=Consolidated%20Banking%20data%20%28CBD2%29",
+           "geo" = unique(cbl_a_ecb$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      )
+  ),
+  
+  "Housing" = list(
+    
+    "hpi_q_estat" =
+      list("title" = "Nominal house price index, quarterly data",
+           "data" = hpi_q_estat,
+           "unit" = "Index - 2015 = 100",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q__custom_19121612/default/table",
+           "geo" = unique(hpi_q_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "hpc_q_estat" =
+      list("title" = "Nominal house price index, quarterly data",
+           "data" = hpc_q_estat,
+           "unit" = "1-quarter % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q__custom_19122422/default/table",
+           "geo" = unique(hpc_q_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "hpca_q_estat" =
+      list("title" = "Nominal house price index, quarterly data",
+           "data" = hpca_q_estat,
+           "unit" = "1-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q__custom_19121636/default/table",
+           "geo" = unique(hpca_q_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "hpi_a_estat" =
+      list("title" = "Nomnal house price index, annual data",
+           "data" = hpi_a_estat,
+           "unit" = "Annual average index - 2015 = 100",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_a__custom_19121643/default/table",
+           "geo" = unique(hpi_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "hpc_a_estat" =
+      list("title" = "Nominal house price index, annual data",
+           "data" = hpc_a_estat,
+           "unit" = "Average 1-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_a__custom_19121646/default/table",
+           "geo" = unique(hpc_a_estat$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "pti_a_estat_mip_2" =
+      list("title" = "Standardised house price-to-income ratio, annual data",
+           "data" = pti_a_estat_mip,
+           "unit" = "% deviation from long term average",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsho60__custom_19122153/default/table",
+           "geo" = unique(pti_a_estat_mip$geo),
+           "dropdown" = "geo",
+           "contains_geo" = TRUE
+      ),
+    "buildp_a_estat_mip_2" =
+      list("title" = "Building permits, annual data",
+           "data" = buildp_a_estat_mip,
+           "unit" = "m2 per 1000 inhabitants",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsho50__custom_19122160/default/table",
+           "geo" = unique(buildp_a_estat_mip$geo),
            "dropdown" = "geo",
            "contains_geo" = TRUE
       )
