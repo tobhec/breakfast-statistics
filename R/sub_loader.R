@@ -39,6 +39,8 @@ mails_dict <- list()
 # Loop through the extracted mails and preferences, and fill the lists
 for (id in contacts$id){
   
+  contact <- contacts[contacts$id == id, ]
+  
   # Extract the config from postgres for the subscriber
   config <- dbGetQuery(
     con,
@@ -94,7 +96,9 @@ for (id in contacts$id){
     }
     
     # Add mail to mail dictionary
-    mails_dict[[per_id]] <- contact$email 
+    mails_dict[[per_id]] <- list(
+      "email" <- contact$email,
+      "frequency" <- contact$attributes$FREQUENCY)
   }
 }
 

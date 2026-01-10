@@ -2,7 +2,7 @@
 # Extract sender and receiver info
 from_email <- Sys.getenv("SENDER_MAIL")
 from_name  <- Sys.getenv("TITLE")
-to_email   <- mails_dict[per][[1]]
+to_email   <- mails_dict[[per]][[1]]
 subject    <- format(Sys.Date(), "%B %d, %Y")
 
 # Extract HTML string
