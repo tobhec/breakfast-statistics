@@ -16,3 +16,7 @@ renv/library/
 
 # Environment variables
 .Renviron
+
+# Environment variables
+sql/02_insert_data.sql
+sql/03_delete_data.sql

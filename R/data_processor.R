@@ -49,13 +49,13 @@ sources_list <- do.call(c, themes_and_sources_list)
 names(sources_list) <- sub(".*\\.", "", names(sources_list))
 
 # Create a list of all units
-themes_and_con_geos_list <- lapply(raw_data_list, function(theme) {
+themes_and_filters_list <- lapply(raw_data_list, function(theme) {
   lapply(theme, function(indicator) {
-    indicator[["contains_geo"]]
+    indicator[["filter"]]
   })
 })
-con_geos_list <- do.call(c, themes_and_con_geos_list)
-names(con_geos_list) <- sub(".*\\.", "", names(con_geos_list))
+filters_list <- do.call(c, themes_and_filters_list)
+names(filters_list) <- sub(".*\\.", "", names(filters_list))
 
 # Create a list of which dropdown the indicators have
 themes_and_dropdowns_list <- lapply(raw_data_list, function(theme) {
@@ -74,7 +74,7 @@ titles_list   <- titles_list[unique_idx]
 links_list    <- links_list[unique_idx]
 units_list    <- units_list[unique_idx]
 sources_list  <- sources_list[unique_idx]
-con_geos_list <- con_geos_list[unique_idx]
+filters_list <- filters_list[unique_idx]
 dropdowns_list <- dropdowns_list[unique_idx]
 
 # Remove status and conf columns if present

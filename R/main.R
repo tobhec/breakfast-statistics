@@ -1,5 +1,6 @@
-# Set working directory
+# Set working directory and load environment variables
 setwd("C:/Users/Tobia/raspberry_pi/breakfast-statistics")
+readRenviron("./.Renviron")
 
 # Load libraries
 library(blastula)
@@ -8,6 +9,8 @@ library(knitr)
 library(MDstats)
 library(httr)
 library(jsonlite)
+library(DBI)
+library(RPostgres)
 
 # Run source scripts
 source("./R/functions.R")
@@ -107,7 +110,7 @@ for (per in names(pref_list)) {
   tryCatch(
     {
       # Send the mail
-      #source("./R/email_sender.R")
+      source("./R/email_sender.R")
     },
     error = function(e) {
       cat("Error sending the mail or saving as vintage for:", per, "\n", e$message)
