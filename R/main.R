@@ -97,26 +97,15 @@ for (per in names(pref_list)) {
     }
   )
   
-  # Try to generate the mail for the current subscriber
+  # Try to generate and send the mail for the current subscriber
   tryCatch(
     {
-      # Generate the mail
+      # Generate the mail and send it
       source("./R/mail_generator.R")
-    },
-    error = function(e) {
-      cat("Error generating the mail for:", per, "\n", e$message)
-      return(NA)
-    }
-  )
-  
-  # Try to send the mail for the current subscriber
-  tryCatch(
-    {
-      # Send the mail
       source("./R/email_sender.R")
     },
     error = function(e) {
-      cat("Error sending the mail or saving as vintage for:", per, "\n", e$message)
+      cat("Error generating or sending the mail for:", per, "\n", e$message)
       return(NA)
     }
   )

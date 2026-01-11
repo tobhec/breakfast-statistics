@@ -82,16 +82,16 @@ for(theme in themes) {
               for (c_label in names(revision_table)[-1]) {
                 
                 # If revision happened
-                if (isTRUE(as.logical(revision_table[revision_table$Country == r_label, c_label]))) {
+                if (isTRUE(as.logical(revision_table[which(revision_table$Country == r_label), c_label]))) {
                   
                   # Mark number yellow
-                  indic_colored[indic_colored$Country == r_label, c_label] <- sprintf(
+                  indic_colored[which(indic_colored$Country == r_label), c_label] <- sprintf(
                     "<span style='background-color:#FFD580;'>%s</span>",
-                    indic_colored[indic_colored$Country == r_label, c_label]
+                    indic_colored[which(indic_colored$Country == r_label), c_label]
                   )
                   
                   # Add sentence explaining the revision
-                  old_value <- vintage_table[vintage_table$Country == r_label, c_label]
+                  old_value <- vintage_table[which(vintage_table$Country == r_label), c_label]
                   notes <- paste0(
                     notes,
                     sprintf("- For %s, %s has been revised from %s.<br>",
@@ -100,13 +100,13 @@ for(theme in themes) {
                   )
                 }
                 # If there is no revision, check if it is a new release
-                else if (is.na(vintage_table[vintage_table$Country == r_label, c_label]) &&
-                         !is.na(indic_colored[indic_colored$Country == r_label, c_label]))
+                else if (is.na(vintage_table[which(vintage_table$Country == r_label), c_label]) &&
+                         !is.na(indic_colored[which(indic_colored$Country == r_label), c_label]))
                 {
                   # If so, mark new data green
-                  indic_colored[indic_colored$Country == r_label, c_label] <- sprintf(
+                  indic_colored[which(indic_colored$Country == r_label), c_label] <- sprintf(
                     "<span style='background-color:lightgreen;'>%s</span>",
-                    indic_colored[indic_colored$Country == r_label, c_label]
+                    indic_colored[which(indic_colored$Country == r_label), c_label]
                   )
                 }
               }
@@ -129,8 +129,27 @@ for(theme in themes) {
         )
       }
       
-      # Build HTML table
-      table <- kable(indic_colored, format = "html", escape = FALSE)
+      # Build HTML table with full grid (horizontal + vertical lines)
+      table <- kable(
+        indic_colored,
+        format = "html",
+        escape = FALSE,
+        table.attr = "border='1' style='border-collapse:collapse; width:100%; border-color:#999;'"
+      )
+      
+      # Style header cells
+      table <- gsub(
+        "<th>",
+        "<th style='padding:4px; background-color:#f2f2f2; border:1px solid #999;'>",
+        table
+      )
+      
+      # Style data cells
+      table <- gsub(
+        "<td>",
+        "<td style='padding:4px; border:1px solid #999;'>",
+        table
+      )
       
       # Add mail graphics for the indicator
       indic_part <- glue("

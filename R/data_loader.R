@@ -1034,7 +1034,7 @@ cbl_a_ecb <- tryCatch(
 # Annual inflation
 infl_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.FP_CPI_TOTL_ZG.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.FP_CPI_TOTL_ZG.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     infl_a_wb <- as.data.table(mds(sdmx_code, 
                                    #startPeriod = 2024, 
                                    ccode = "EC"))
@@ -1049,7 +1049,7 @@ infl_a_wb <- tryCatch(
 # Current account as percentage of GDP
 ca_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.BN_CAB_XOKA_GD_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.BN_CAB_XOKA_GD_ZS.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     ca_a_wb <- as.data.table(mds(sdmx_code, 
                                  #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                  ccode = "EC"))
@@ -1064,7 +1064,7 @@ ca_a_wb <- tryCatch(
 # Exports of goods and services as percentage of GDP
 exp_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.NE_EXP_GNFS_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.NE_EXP_GNFS_ZS.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     exp_a_wb <- as.data.table(mds(sdmx_code, 
                                   #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                   ccode = "EC"))
@@ -1079,7 +1079,7 @@ exp_a_wb <- tryCatch(
 # Imports of goods and services as percentage of GDP
 imp_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.NE_IMP_GNFS_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.NE_IMP_GNFS_ZS.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     imp_a_wb <- as.data.table(mds(sdmx_code, 
                                   #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                   ccode = "EC"))
@@ -1094,7 +1094,7 @@ imp_a_wb <- tryCatch(
 # Net inflows of FDI as percentage of GDP
 fdiin_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.BX_KLT_DINV_WD_GD_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.BX_KLT_DINV_WD_GD_ZS.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     fdiin_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                     ccode = "EC"))
@@ -1109,7 +1109,7 @@ fdiin_a_wb <- tryCatch(
 # Net outflows of FDI as percentage of GDP
 fdiout_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.BM_KLT_DINV_WD_GD_ZS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.BM_KLT_DINV_WD_GD_ZS.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     fdiout_a_wb <- as.data.table(mds(sdmx_code, 
                                      #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                      ccode = "EC"))
@@ -1124,7 +1124,7 @@ fdiout_a_wb <- tryCatch(
 # Real GDP growth (constant 2015 prices)
 gdpg_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.NY_GDP_MKTP_KD_ZG.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.NY_GDP_MKTP_KD_ZG.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdpg_a_wb <- as.data.table(mds(sdmx_code, 
                                    #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                    ccode = "EC"))
@@ -1139,7 +1139,7 @@ gdpg_a_wb <- tryCatch(
 # Real GDP per capita growth (constant 2015 prices)
 gdpcg_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.NY_GDP_PCAP_KD_ZG.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.NY_GDP_PCAP_KD_ZG.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdpcg_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                     ccode = "EC"))
@@ -1154,7 +1154,7 @@ gdpcg_a_wb <- tryCatch(
 # Real GDP per capita (constant 2015 prices)
 gdpc_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.NY_GDP_PCAP_KD.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.NY_GDP_PCAP_KD.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdpc_a_wb <- as.data.table(mds(sdmx_code, 
                                    #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                    ccode = "EC"))
@@ -1169,7 +1169,7 @@ gdpc_a_wb <- tryCatch(
 # Real GDP (constant 2015 prices)
 gdp_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.NY_GDP_MKTP_KD.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.NY_GDP_MKTP_KD.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     gdp_a_wb <- as.data.table(mds(sdmx_code, 
                                   #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                   ccode = "EC"))
@@ -1184,7 +1184,7 @@ gdp_a_wb <- tryCatch(
 # Income share held by top 10 %
 ist10_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_DST_10TH_10.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_DST_10TH_10.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     ist10_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                     ccode = "EC"))
@@ -1199,7 +1199,7 @@ ist10_a_wb <- tryCatch(
 # Income share held by top 20 %
 ist20_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_DST_05TH_20.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_DST_05TH_20.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     ist20_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                     ccode = "EC"))
@@ -1214,7 +1214,7 @@ ist20_a_wb <- tryCatch(
 # Income share held by lowest 10 %
 isl10_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_DST_FRST_10.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_DST_FRST_10.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     isl10_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                     ccode = "EC"))
@@ -1229,7 +1229,7 @@ isl10_a_wb <- tryCatch(
 # Income share held by lowest 20 %
 isl20_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_DST_FRST_20.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_DST_FRST_20.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     isl20_a_wb <- as.data.table(mds(sdmx_code, 
                                     #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                     ccode = "EC"))
@@ -1244,7 +1244,7 @@ isl20_a_wb <- tryCatch(
 # Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)
 povhc3_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_POV_DDAY.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_POV_DDAY.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povhc3_a_wb <- as.data.table(mds(sdmx_code, 
                                      #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                      ccode = "EC"))
@@ -1259,7 +1259,7 @@ povhc3_a_wb <- tryCatch(
 # Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population)
 povhc42_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_POV_LMIC.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_POV_LMIC.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povhc42_a_wb <- as.data.table(mds(sdmx_code, 
                                       #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                       ccode = "EC"))
@@ -1274,7 +1274,7 @@ povhc42_a_wb <- tryCatch(
 # Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population)
 povhc83_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_POV_UMIC.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_POV_UMIC.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povhc83_a_wb <- as.data.table(mds(sdmx_code, 
                                       #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                       ccode = "EC"))
@@ -1289,7 +1289,7 @@ povhc83_a_wb <- tryCatch(
 # Poverty gap at $3.00 a day (2021 PPP) (%)
 povgap3_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_POV_GAPS.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_POV_GAPS.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povgap3_a_wb <- as.data.table(mds(sdmx_code, 
                                       #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                       ccode = "EC"))
@@ -1304,7 +1304,7 @@ povgap3_a_wb <- tryCatch(
 # Poverty gap at $4.20 a day (2021 PPP) (%)
 povgap42_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_POV_LMIC_GP.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_POV_LMIC_GP.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povgap42_a_wb <- as.data.table(mds(sdmx_code, 
                                        #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                        ccode = "EC"))
@@ -1319,7 +1319,7 @@ povgap42_a_wb <- tryCatch(
 # Poverty gap at $8.30 a day (2021 PPP) (%)
 povgap83_a_wb <- tryCatch(
   {
-    sdmx_code <- "WB/WDI/A.SI_POV_UMIC_GP.USA+JPN+CHN+RUS+EUU+EMU+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
+    sdmx_code <- "WB/WDI/A.SI_POV_UMIC_GP.USA+JPN+CHN+RUS+GBR+CAN+KOR+MEX+SWE+FRA+PLN+DNK+HRV+CYP+CZE+EST+FIN+ESP+DEU+GRC+ITA+NLD+HUN+LVA+LTU+IRL+LUX+BEL+MLT+SVK+SVN+AUT+BGR+PRT+ROU+NOR+ISL+CHE+SRB+AUS+NZL+ARG"
     povgap83_a_wb <- as.data.table(mds(sdmx_code, 
                                        #startPeriod = format(Sys.Date() - 365, "%Y"), 
                                        ccode = "EC"))
@@ -1414,21 +1414,21 @@ raw_data_list <- list(
            "dropdown" = "geo"
       ),
     
-    "infdiff_a_estat_mip_2" =
-      list("title" = "Core inflation differential vis-à-vis the euro area, annual data",
-           "data" = infdiff_a_estat_mip,
-           "unit" = "Percentage points",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipscp10__custom_19122112/default/table",
-           "dropdown" = "geo"
-      ),
-    
     "infl_a_wb" =
       list("title" = "Inflation, annual data",
            "data" = infl_a_wb,
            "unit" = "1-year % change",
            "source" = "World Bank",
            "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "dropdown" = "geo"
+      ),
+    
+    "infdiff_a_estat_mip_2" =
+      list("title" = "Core inflation differential vis-à-vis the euro area, annual data",
+           "data" = infdiff_a_estat_mip,
+           "unit" = "Percentage points",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipscp10__custom_19122112/default/table",
            "dropdown" = "geo"
       )
   ),
@@ -1453,27 +1453,9 @@ raw_data_list <- list(
            "dropdown" = "geo"
       ),
     
-    "gdpcap_a_estat_mip_2" =
-      list("title" = "Real GDP per capita, annual data",
-           "data" = gdpcap_a_estat_mip,
-           "unit" = "EUR",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsna40__custom_19122090/default/table",
-           "dropdown" = "geo"
-      ),
-    
     "gdpg_a_wb" =
       list("title" = "Real GDP growth (constant 2015 prices), annual data",
            "data" = gdpg_a_wb,
-           "unit" = "1-year % change",
-           "source" = "World Bank",
-           "link" = "https://databank.worldbank.org/source/world-development-indicators",
-           "dropdown" = "geo"
-      ),
-    
-    "gdpcg_a_wb" =
-      list("title" = "Real GDP per capita growth (constant 2015 prices), annual data",
-           "data" = gdpcg_a_wb,
            "unit" = "1-year % change",
            "source" = "World Bank",
            "link" = "https://databank.worldbank.org/source/world-development-indicators",
@@ -1489,10 +1471,28 @@ raw_data_list <- list(
            "dropdown" = "geo"
       ),
     
+    "gdpcap_a_estat_mip_2" =
+      list("title" = "Real GDP per capita, annual data",
+           "data" = gdpcap_a_estat_mip,
+           "unit" = "EUR",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsna40__custom_19122090/default/table",
+           "dropdown" = "geo"
+      ),
+    
     "gdpc_a_wb" =
       list("title" = "Real GDP per capita, annual data",
            "data" = gdpc_a_wb,
            "unit" = "2015 USD",
+           "source" = "World Bank",
+           "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "dropdown" = "geo"
+      ),
+    
+    "gdpcg_a_wb" =
+      list("title" = "Real GDP per capita growth (constant 2015 prices), annual data",
+           "data" = gdpcg_a_wb,
+           "unit" = "1-year % change",
            "source" = "World Bank",
            "link" = "https://databank.worldbank.org/source/world-development-indicators",
            "dropdown" = "geo"
@@ -1591,8 +1591,26 @@ raw_data_list <- list(
            "dropdown" = "geo"
       ),
     
+    "exp_a_wb" =
+      list("title" = "Exports of goods and services, annual data",
+           "data" = exp_a_wb,
+           "unit" = "% of GDP",
+           "source" = "World Bank",
+           "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "dropdown" = "geo"
+      ),
+    
+    "imp_a_wb" =
+      list("title" = "Imports of goods and services, annual data",
+           "data" = imp_a_wb,
+           "unit" = "% of GDP",
+           "source" = "World Bank",
+           "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "dropdown" = "geo"
+      ),
+    
     "epmip_a_estat_2" =
-      list("title" = "Export performance against advanced economies, annual data",
+      list("title" = "Export market shares of advanced economies exports, annual data",
            "data" = epmip_a_estat,
            "unit" = "3-year % change",
            "source" = "Eurostat",
@@ -1618,24 +1636,6 @@ raw_data_list <- list(
            "dropdown" = "geo"
       ),
     
-    "exp_a_wb" =
-      list("title" = "Exports of goods and services, annual data",
-           "data" = exp_a_wb,
-           "unit" = "% of GDP",
-           "source" = "World Bank",
-           "link" = "https://databank.worldbank.org/source/world-development-indicators",
-           "dropdown" = "geo"
-      ),
-    
-    "imp_a_wb" =
-      list("title" = "Imports of goods and services, annual data",
-           "data" = imp_a_wb,
-           "unit" = "% of GDP",
-           "source" = "World Bank",
-           "link" = "https://databank.worldbank.org/source/world-development-indicators",
-           "dropdown" = "geo"
-      ),
-    
     "ca_q_estat" =
       list("title" = "Current account balance, quarterly data",
            "data" = ca_q_estat,
@@ -1651,6 +1651,24 @@ raw_data_list <- list(
            "unit" = "% of GDP",
            "source" = "Eurostat",
            "link" = "https://ec.europa.eu/eurostat/databrowser/view/bop_gdp6_q__custom_19121669/default/table",
+           "dropdown" = "geo"
+      ),
+    
+    "ca_a_wb" =
+      list("title" = "Current account balance, annual data",
+           "data" = ca_a_wb,
+           "unit" = "% of GDP",
+           "source" = "World Bank",
+           "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "dropdown" = "geo"
+      ),
+    
+    "camip_a_estat_2" =
+      list("title" = "Current account balance, annual data",
+           "data" = camip_a_estat,
+           "unit" = "% of GDP - 3-year average",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsbp10__custom_19122337/default/table",
            "dropdown" = "geo"
       ),
     
@@ -1690,30 +1708,12 @@ raw_data_list <- list(
            "dropdown" = "geo"
       ),
     
-    "camip_a_estat_2" =
-      list("title" = "Current account balance, annual data",
-           "data" = camip_a_estat,
-           "unit" = "% of GDP - 3-year average",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsbp10__custom_19122337/default/table",
-           "dropdown" = "geo"
-      ),
-    
     "nendi_a_estat_mip_2" =
       list("title" = "Net international investment position excluding non-defaultable instruments, annual data",
            "data" = nendi_a_estat_mip,
            "unit" = "% of GDP",
            "source" = "Eurostat",
            "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsii50__custom_19122073/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "ca_a_wb" =
-      list("title" = "Current account balance, annual data",
-           "data" = ca_a_wb,
-           "unit" = "% of GDP",
-           "source" = "World Bank",
-           "link" = "https://databank.worldbank.org/source/world-development-indicators",
            "dropdown" = "geo"
       ),
     
@@ -1898,6 +1898,53 @@ raw_data_list <- list(
       )
   ),
   
+  "Private sector debt" = list(
+    
+    "nfcdmip_a_estat_2" =
+      list("title" = "Non-financial corporations debt, annual data",
+           "data" = nfcdmip_a_estat,
+           "unit" = "% of GDP",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspd30__custom_19122366/default/table",
+           "dropdown" = "geo"
+      ),
+    "hhdmip_a_estat_2" =
+      list("title" = "Household debt (including non-profit institutions serving households), annual data",
+           "data" = hhdmip_a_estat,
+           "unit" = "% of GDP",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspd22__custom_19122360/default/table",
+           "dropdown" = "geo"
+      ),
+    
+    "hhdgdi_a_estat_mip_2" =
+      list("title" = "Household debt (including non-profit institutions serving households), annual data",
+           "data" = hhdgdi_a_estat_mip,
+           "unit" = "% of GDI",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspd40__custom_19122114/default/table",
+           "dropdown" = "geo"
+      ),
+    
+    "nfccfmip_a_estat_2" =
+      list("title" = "Non-financial corporations credit flow (excluding foreign direct investments), annual data",
+           "data" = nfccfmip_a_estat,
+           "unit" = "% of debt stock t-1 (excluding foreign direct investments)",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspc30__custom_19122371/default/table",
+           "dropdown" = "geo"
+      ),
+    
+    "hhcfmip_a_estat_2" =
+      list("title" = "Household credit flow (including non-profit institutions serving households), annual data",
+           "data" = hhcfmip_a_estat,
+           "unit" = "% of debt stock t-1",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspc40__custom_19122368/default/table",
+           "dropdown" = "geo"
+      )
+  ),
+  
   "Housing" = list(
     
     "hpi_q_estat" =
@@ -1928,7 +1975,7 @@ raw_data_list <- list(
       ),
     
     "hpi_a_estat" =
-      list("title" = "Nomnal house price index, annual data",
+      list("title" = "Nominal house price index, annual data",
            "data" = hpi_a_estat,
            "unit" = "Annual average index - 2015 = 100",
            "source" = "Eurostat",
@@ -1960,54 +2007,6 @@ raw_data_list <- list(
            "unit" = "m2 per 1000 inhabitants",
            "source" = "Eurostat",
            "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsho50__custom_19122160/default/table",
-           "dropdown" = "geo"
-      )
-  ),
-  
-  "Private sector debt" = list(
-    
-    "hhdmip_a_estat_2" =
-      list("title" = "Household debt (including non-profit institutions serving households), annual data",
-           "data" = hhdmip_a_estat,
-           "unit" = "% of GDP",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspd22__custom_19122360/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "nfcdmip_a_estat_2" =
-      list("title" = "Non-financial corporation debt, annual data",
-           "data" = nfcdmip_a_estat,
-           "unit" = "% of GDP",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspd30__custom_19122366/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "hhcfmip_a_estat_2" =
-      list("title" = "Household credit flow (including non-profit institutions serving households), annual data",
-           "data" = hhcfmip_a_estat,
-           "unit" = "% of debt stock t-1",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspc40__custom_19122368/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "nfccfmip_a_estat_2" =
-      list("title" = "Non-financial corporation credit flow (excluding foreign direct investments), annual data",
-           "data" = nfccfmip_a_estat,
-           "unit" = "% of debt stock t-1 (excluding foreign direct investments)",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspc30__custom_19122371/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "hhdgdi_a_estat_mip_2" =
-      list("title" = "Household debt (including non-profit institutions serving households), annual data",
-           "data" = hhdgdi_a_estat_mip,
-           "unit" = "% of GDI",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspd40__custom_19122114/default/table",
            "dropdown" = "geo"
       )
   ),
@@ -2283,7 +2282,7 @@ raw_data_list <- list(
       ),
     
     "nfcdmip_a_estat" =
-      list("title" = "Non-financial corporation debt, annual data",
+      list("title" = "Non-financial corporations debt, annual data",
            "data" = nfcdmip_a_estat,
            "unit" = "% of GDP",
            "source" = "Eurostat",
@@ -2301,7 +2300,7 @@ raw_data_list <- list(
       ),
     
     "nfccfmip_a_estat" =
-      list("title" = "Non-financial corporation credit flow (excluding foreign direct investments), annual data",
+      list("title" = "Non-financial corporations credit flow (excluding foreign direct investments), annual data",
            "data" = nfccfmip_a_estat,
            "unit" = "% of debt stock t-1 (excluding foreign direct investments)",
            "source" = "Eurostat",
