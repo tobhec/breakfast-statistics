@@ -150,7 +150,7 @@ for(theme in themes) {
 # Add unsubscribe message
 body_text <- paste0(
   body_text,
-  "<p style='color:#555;text-decoration:underline;'>
+  "<p style='color:#555;'>
    Until I have implemented an unsubscribe button, just let me know personally if you wish to stop receiving mails, or change the content.
    </p>"
 )
