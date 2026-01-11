@@ -4,7 +4,7 @@
 body_text <- paste0(
   "## Breakfast Statistics - ", format(Sys.Date(), "%B %d, %Y"), "\n",
   
-  #  "Data was downloaded around 07 AM Brussels time.\n\n",
+  "Data was downloaded around 07.15 AM Brussels time.\n\n",
   
   "<span style='background-color:lightgreen;'>Green numbers represent new data releases.</span>\n",
   "<span style='background-color:#FFD580;'>Orange numbers represent data revisions.</span>"
@@ -170,7 +170,7 @@ for(theme in themes) {
 body_text <- paste0(
   body_text,
   "<p style='color:#555;'>
-   Until I have implemented an unsubscribe button, just let me know personally if you wish to stop receiving mails, or change the content.
+   Until I have implemented an unsubscribe button, just let me know personally if you wish to stop receiving mails or change the content.
    </p>"
 )
 
