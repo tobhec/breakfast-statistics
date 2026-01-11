@@ -1,3 +1,7 @@
+# Script loading the vintages, and compares them with the loaded new data to create
+# tables with TRUE/FALSE if there were any changes, as well as the differences in values
+
+
 # 1 = daily subscription, 2 = weekly subscription
 if(mails_dict[[per]][[2]] == 1) {
   days_between_vintage <- 1

@@ -1,3 +1,6 @@
+# Script defining functions and variables used in other scripts
+
+
 # Function to calculate the differences between the cells 
 # in two corresponding tables
 calc_diff <- function(new_table, old_table) {

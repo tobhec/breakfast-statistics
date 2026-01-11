@@ -1,3 +1,6 @@
+# Script cleaning the data tables, and filtering the list containing all indicators
+# to create specific lists which are easier to filter for information further one
+
 
 # Create a vector with the themes
 themes <- names(raw_data_list)
@@ -48,15 +51,6 @@ themes_and_sources_list <- lapply(raw_data_list, function(theme) {
 sources_list <- do.call(c, themes_and_sources_list)
 names(sources_list) <- sub(".*\\.", "", names(sources_list))
 
-# Create a list of all units
-themes_and_filters_list <- lapply(raw_data_list, function(theme) {
-  lapply(theme, function(indicator) {
-    indicator[["filter"]]
-  })
-})
-filters_list <- do.call(c, themes_and_filters_list)
-names(filters_list) <- sub(".*\\.", "", names(filters_list))
-
 # Create a list of which dropdown the indicators have
 themes_and_dropdowns_list <- lapply(raw_data_list, function(theme) {
   lapply(theme, function(indicator) {
@@ -74,7 +68,6 @@ titles_list   <- titles_list[unique_idx]
 links_list    <- links_list[unique_idx]
 units_list    <- units_list[unique_idx]
 sources_list  <- sources_list[unique_idx]
-filters_list <- filters_list[unique_idx]
 dropdowns_list <- dropdowns_list[unique_idx]
 
 # Remove status and conf columns if present

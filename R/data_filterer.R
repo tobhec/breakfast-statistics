@@ -1,3 +1,6 @@
+# Script filtering the data in i_temp for the subscribers choices of countries/currencies 
+# and periods, and restructures the data to a wide format
+
 
 # Filter for the subscribers selections
 if(dropdowns_list[[code]] == "geo") {

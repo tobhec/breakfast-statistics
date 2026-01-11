@@ -1,3 +1,6 @@
+# Script generating the mail body
+
+
 body_text <- paste0(
   "## Breakfast Statistics - ", format(Sys.Date(), "%B %d, %Y"), "\n",
   

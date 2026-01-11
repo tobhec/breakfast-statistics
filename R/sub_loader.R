@@ -1,3 +1,5 @@
+# Script loading subscribers and their selections
+
 
 # Get API key
 api_key <- Sys.getenv("BREVO_API_KEY")

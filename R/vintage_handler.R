@@ -1,3 +1,5 @@
+# Script saving the new data as vintages, as well as cleans vintages older tha 6 months
+
 
 # Create a new folder for todays date
 if (!dir.exists(paste0("./vintages/", format(Sys.Date(), "%Y-%m-%d")))) {

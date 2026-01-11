@@ -1,3 +1,6 @@
+# Main script - loads environment, packages, and runs the source scripts
+
+
 # Set working directory and load environment variables
 setwd("C:/Users/Tobia/raspberry_pi/breakfast-statistics")
 readRenviron("./.Renviron")
@@ -13,10 +16,10 @@ library(DBI)
 library(RPostgres)
 
 # Run source scripts
-source("./R/functions.R")
+source("./R/utils.R")
 source("./R/data_loader.R")
 source("./R/data_processor.R")
-source("./R/vintage_saver.R")
+source("./R/vintage_handler.R")
 source("./R/sub_loader.R")
 
 # Produce and send the mails for each subscriber

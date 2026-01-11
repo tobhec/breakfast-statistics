@@ -1,3 +1,5 @@
+# Script sending the emails with the Brevo transactional API
+
 
 # Extract sender and receiver info
 from_email <- Sys.getenv("SENDER_MAIL")
