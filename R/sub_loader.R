@@ -80,7 +80,7 @@ for (id in contacts$id){
             }
             
             # Add to list of subscriber preferences
-            pref_list[[id]][[indic]] <- 
+            pref_list[[per_id]][[indic]] <- 
               list("Filter" = filters,
                    "Period" = start_period)
           } else {
