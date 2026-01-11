@@ -1433,7 +1433,7 @@ raw_data_list <- list(
       )
   ),
   
-  "Economic growth" = list(
+  "Economic growth and productivity" = list(
     
     "gdp_q_estat" =
       list("title" = "Real GDP growth (seasonally and calendar adjusted), quarterly data",
@@ -1459,24 +1459,6 @@ raw_data_list <- list(
            "unit" = "EUR",
            "source" = "Eurostat",
            "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsna40__custom_19122090/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "gfcf_a_estat_mip_2" =
-      list("title" = "Investment in fixed assets (gross fixed capital formation), annual data",
-           "data" = gfcf_a_estat_mip,
-           "unit" = "% of GDP",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsna20__custom_19122093/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "gerd_a_estat_mip_2" =
-      list("title" = "Gross expenditure on research and development, annual data",
-           "data" = gerd_a_estat_mip,
-           "unit" = "% of GDP",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsst10__custom_19122099/default/table",
            "dropdown" = "geo"
       ),
     
@@ -1513,6 +1495,42 @@ raw_data_list <- list(
            "unit" = "2015 USD",
            "source" = "World Bank",
            "link" = "https://databank.worldbank.org/source/world-development-indicators",
+           "dropdown" = "geo"
+      ),
+    
+    "gfcf_a_estat_mip_2" =
+      list("title" = "Investment in fixed assets (gross fixed capital formation), annual data",
+           "data" = gfcf_a_estat_mip,
+           "unit" = "% of GDP",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsna20__custom_19122093/default/table",
+           "dropdown" = "geo"
+      ),
+    
+    "gerd_a_estat_mip_2" =
+      list("title" = "Gross expenditure on research and development, annual data",
+           "data" = gerd_a_estat_mip,
+           "unit" = "% of GDP",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsst10__custom_19122099/default/table",
+           "dropdown" = "geo"
+      ),
+    
+    "nulcmip_a_estat_2" =
+      list("title" = "Nominal unit labour cost per hour worked, annual data",
+           "data" = nulcmip_a_estat,
+           "unit" = "3-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipslm10__custom_19122351/default/table",
+           "dropdown" = "geo"
+      ),
+    
+    "lpr_a_estat_mip_2" =
+      list("title" = "Real labour productivity per hour worked, annual data",
+           "data" = lpr_a_estat_mip,
+           "unit" = "1-year % change",
+           "source" = "Eurostat",
+           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsna70__custom_19122109/default/table",
            "dropdown" = "geo"
       )
   ),
@@ -1990,27 +2008,6 @@ raw_data_list <- list(
            "unit" = "% of GDI",
            "source" = "Eurostat",
            "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipspd40__custom_19122114/default/table",
-           "dropdown" = "geo"
-      )
-  ),
-  
-  "Productivity" = list(
-    
-    "nulcmip_a_estat_2" =
-      list("title" = "Nominal unit labour cost per hour worked, annual data",
-           "data" = nulcmip_a_estat,
-           "unit" = "3-year % change",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipslm10__custom_19122351/default/table",
-           "dropdown" = "geo"
-      ),
-    
-    "lpr_a_estat_mip_2" =
-      list("title" = "Real labour productivity per hour worked, annual data",
-           "data" = lpr_a_estat_mip,
-           "unit" = "1-year % change",
-           "source" = "Eurostat",
-           "link" = "https://ec.europa.eu/eurostat/databrowser/view/tipsna70__custom_19122109/default/table",
            "dropdown" = "geo"
       )
   ),
