@@ -147,21 +147,12 @@ for(theme in themes) {
   }
 }
 
-# Create an unsubscribe url using the last id of the subscriber in per
-unsubscribe_url <- paste0(
-  "https://app.brevo.com/unsubscribe/transactional?contactId=", 
-  substring(per, nchar(per), nchar(per))
-)
-
-# Add the link to the body
-#body_text <- paste0(body_text,
-#  "<p><a href='", unsubscribe_url, "' style='display:inline-block;padding:10px 20px;
-#       background-color:#ff4d4d;color:white;text-decoration:none;
-#       border-radius:5px;'>Unsubscribe</a></p>"
-#)
-
-body_text <- paste0(body_text,
-                    "<p><a href='", unsubscribe_url, "' style='color:#555;text-decoration:underline;'>Unsubscribe</a></p>"
+# Add unsubscribe message
+body_text <- paste0(
+  body_text,
+  "<p style='color:#555;text-decoration:underline;'>
+   Until I have implemented an unsubscribe button, just let me know personally if you wish to stop receiving mails, or change the content.
+   </p>"
 )
 
 # Compose the mail
