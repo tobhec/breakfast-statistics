@@ -72,8 +72,9 @@ for(theme in themes) {
               }
             }
           }
-          # 2. Check for revisions and new releases (in pre-existing columns)
-          if(length(row_labels_rev) > 0) {
+          # 2. Check for revisions and new releases in pre-existing columns (for datasets with countries as rows)
+          if(dropdowns_list[[indic]] == "geo" && 
+             length(row_labels_rev) > 0) {
             for (r_label in row_labels_rev) {
               for (c_label in names(revision_table)[-1]) {
                 
