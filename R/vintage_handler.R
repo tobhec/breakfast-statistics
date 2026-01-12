@@ -1,4 +1,4 @@
-# Script saving the new data as vintages, as well as cleans vintages older tha 6 months
+# Script saving the new data as vintages, as well as cleans vintages older than 1 month
 
 
 # Create a new folder for todays date
@@ -23,7 +23,7 @@ for(table in tables_list) {
 }
 
 # Delete vintages for T-180
-cutoff <- as.Date(format(Sys.Date() - 180))
+cutoff <- as.Date(format(Sys.Date() - 30))
 folders <- list.dirs("./vintages", recursive = FALSE, full.names = FALSE)
 folder_dates <- as.Date(folders, format = "%Y-%m-%d")
 old_folders <- folders[folder_dates < cutoff]
